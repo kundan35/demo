@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable name="moviesViewModel" type="com.kotlin.demo.presentation.movies.MoviesViewModel"/>
+
+    </data>
+
+    <FrameLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search"
+            android:theme="@style/AppSearchView"
+            android:layout_width="match_parent"
+            app:queryHint="Search Movie"
+            android:layout_margin="8dp"
+            android:layout_height="50dp" />
+        <androidx.recyclerview.widget.RecyclerView
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:id="@+id/movies_recycler_view"/>
+
+        <ProgressBar
+                android:id="@+id/movies_progress_bar"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+    </FrameLayout>
+
+
+</layout>

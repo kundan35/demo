@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+                name="movieViewModel"
+                type="com.kotlin.demo.presentation.movies.MovieViewModel" />
+    </data>
+
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <ImageView
+                    android:id="@+id/movie_image_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/movie_image_height_size"
+                    android:scaleType="centerCrop"
+                    android:transitionName="image"
+                    tools:targetApi="lollipop" />
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/movie_image_view"
+                    android:layout_margin="8dp"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLength="10"
+                    android:maxLines="1"
+                    android:text="@{movieViewModel.movieData.title}"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="@dimen/subheading2" />
+
+            <ImageView
+                android:id="@+id/iv_bookmark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_star_empty_white_vector"
+                android:layout_below="@id/movie_image_view"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+
+
+                />
+
+            <ProgressBar
+                    android:id="@+id/movie_progress_bar"
+                    style="@style/Base.Widget.AppCompat.ProgressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</layout>
