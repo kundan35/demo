@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Embibe Assignment</string>
+    <string name="app_name">Movie Project</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="movie_fragment_label">Movie Fragment</string>
