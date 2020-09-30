@@ -15,7 +15,7 @@ import javax.inject.Inject
 class MoviesViewModel @Inject constructor(private val getMoviesUseCase: GetMoviesUseCase) :
     ViewModel() {
 
-    private val TAG = MoviesViewModel::class.java.simpleName
+    //private val TAG = MoviesViewModel::class.java.simpleName
     val movieListReceivedLiveData = MutableLiveData<List<MovieVO>>()
     val isLoad = MutableLiveData<Boolean>()
     val isPaginated = MutableLiveData<Boolean>()
